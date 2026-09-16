@@ -5,10 +5,11 @@
 | Skill | Когда применять |
 | --- | --- |
 | [vue-nuxt-workflow](skills/vue-nuxt-workflow/SKILL.md) | Vue/Nuxt: читаемый control flow, composables, готовые UI-компоненты, async и браузерные проверки. |
+| [scss-workflow](skills/scss-workflow/SKILL.md) | SCSS и Vue styles: проверенные токены, состояния, селекторы, Sass API и адаптивная раскладка. |
 | [go-backend-workflow](skills/go-backend-workflow/SKILL.md) | Go backend: handlers и сервисы, context, ошибки, SQL/sqlc, контракты и focused tests. |
 | [project-memory](skills/project-memory/SKILL.md) | Решения, вопросы и термины в документации проекта, доступные человеку и любому агенту. |
 
-Vue и Go сохраняют практические примеры. Специфика Digiversity вынесена в условный reference Go skill и не становится требованием для других проектов. В репозитории только собственные skills; системные и сторонние плагины сюда не копируются.
+Vue, Go и SCSS содержат практические примеры. Имена API и ограничения Digiversity отмечены как специфика исходного проекта и не становятся требованиями для других проектов. В репозитории только собственные skills; системные и сторонние плагины сюда не копируются.
 
 ## Подключение
 

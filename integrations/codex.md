@@ -24,4 +24,4 @@ node scripts/install.mjs --target "$HOME/.codex/skills" --replace
 
 При заданном `CODEX_HOME` в PowerShell передай `--target "$env:CODEX_HOME/skills"`.
 
-Открой новую сессию и проверь наличие `vue-nuxt-workflow`, `go-backend-workflow` и `project-memory` в списке skills. Явный вызов — например, `$go-backend-workflow`; автоматический выбор работает по описанию skill. Скрипт установки сам сессию и модель не запускает.
+Открой новую сессию и проверь наличие `vue-nuxt-workflow`, `scss-workflow`, `go-backend-workflow` и `project-memory` в списке skills. Явный вызов — например, `$scss-workflow`; автоматический выбор работает по описанию skill. Скрипт установки сам сессию и модель не запускает.
