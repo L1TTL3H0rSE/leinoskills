@@ -1,5 +1,28 @@
 # Codex
 
+## Plugin
+
+Use a recent CLI with `codex plugin` support:
+
+```sh
+codex plugin marketplace add https://github.com/L1TTL3H0rSE/leinoskills.git
+codex plugin add leinoskills@leinoskills
+codex plugin list --marketplace leinoskills --json
+```
+
+Restart Codex and check that the plugin is enabled and its skills appear in the catalog. The repository uses the portable root `plugin.json` and a Codex marketplace at `.agents/plugins/marketplace.json`; both resolve to the existing `skills/` directory. See the [Codex plugin documentation](https://developers.openai.com/plugins/build/plugins).
+
+To refresh the marketplace and install its current plugin version:
+
+```sh
+codex plugin marketplace upgrade leinoskills
+codex plugin add leinoskills@leinoskills
+```
+
+Restart Codex after updating. Plugin files are cached by the host; editing a separate checkout does not update that cache. Avoid enabling standalone copies of these skills alongside the plugin. Moving old copies outside discovery preserves customizations while preventing duplicates.
+
+## Standalone skills
+
 Agent Skills packages do not require `agents/openai.yaml`; that file adds optional UI settings. Use a skill discovery directory supported by your installation. See the [Codex skill documentation](https://learn.chatgpt.com/docs/build-skills) for current host behavior.
 
 From this checkout's root, in PowerShell or a shell with HOME set, for installations using `~/.agents/skills`:

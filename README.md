@@ -18,11 +18,35 @@ This repository contains its own skills, not copies of system skills or third-pa
 
 ## Install
 
+### Plugin
+
+With a recent Codex CLI:
+
+```sh
+codex plugin marketplace add https://github.com/L1TTL3H0rSE/leinoskills.git
+codex plugin add leinoskills@leinoskills
+```
+
+With Claude Code:
+
+```sh
+claude plugin marketplace add L1TTL3H0rSE/leinoskills
+claude plugin install leinoskills@leinoskills
+```
+
+In a Claude Code session (2.1.275+), the equivalent one-step command is `/plugin install leinoskills --marketplace L1TTL3H0rSE/leinoskills`.
+
+Restart the agent after installation. Both packages include all seven skills, but **chatgpt-pro-advisor works only in Codex desktop** with its required ChatGPT tools. The plugin adds no hooks, servers, or dependencies. It is distributed through this repository's marketplace, not listed in a vendor's public directory.
+
+Choose either the plugin or standalone installation for a given host. If migrating, move old standalone copies outside the host's skill discovery directory to avoid duplicate instructions; preserve local customizations. See [Codex](integrations/codex.md) and [Claude Code](integrations/claude-code.md) for updates and verification.
+
+### Standalone skills
+
 Clone this repository or download and extract its source, then run these commands from its root:
 
 ```sh
 node scripts/check.mjs
-node --test scripts/install.test.mjs
+node --test scripts/install.test.mjs scripts/plugin.test.mjs
 ```
 
 Reading skills requires no Node.js. The installer and checks use Node.js 20+ and only its standard library; no npm dependencies are needed.
@@ -48,7 +72,7 @@ Run one installer per target at a time and do not edit old copies during replace
 
 [Suggested routing instructions](integrations/workflow-routing.md) separate user preferences, portable skills, and repository rules. Installation does not alter personal instructions. Skill discovery alone does not prove correct model selection or behavior.
 
-Edit source in this checkout so linked installations read the same files. `git pull --ff-only` updates existing links; rerun installation for newly added skills. Start a fresh agent session after updating.
+For standalone links, edit source in this checkout so installed skills read the same files. `git pull --ff-only` updates existing links; rerun installation for newly added skills. Plugin installations use host-managed cached copies; update them through the host's plugin commands. Start a fresh agent session after updating.
 
 Shared rules/examples live in `skills/`; host integration lives in `integrations/`. Each skill keeps local references inside its own package. The target repository owns mandatory approval processes and architecture. Special tool requirements are stated in each skill's description.
 
@@ -58,4 +82,4 @@ Keep public examples generic. Do not commit personal machine paths, private proj
 
 Before committing, run both checks above and `git diff --check`. The validator checks UTF-8/LF, local Markdown links, names, descriptions, and explicit provider paths inside skills. Frontmatter deliberately supports a small valid YAML subset: plain `name` and JSON-quoted `description`, not arbitrary YAML.
 
-Filesystem tests cover installation, backup preservation, dry-run, repeat runs, and overlapping-directory protection. They do not replace observing skill decisions on real tasks.
+Filesystem tests cover installation, backup preservation, dry-run, repeat runs, and overlapping-directory protection. Plugin tests check that both manifests describe the same version and both marketplaces resolve to the shared skill package. Keep `plugin.json` and `.claude-plugin/plugin.json` versions in sync when publishing a release. These checks do not replace observing skill decisions on real tasks.

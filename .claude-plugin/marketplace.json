@@ -1,0 +1,14 @@
+{
+  "name": "leinoskills",
+  "description": "Portable engineering skills for coding agents.",
+  "owner": {
+    "name": "leinoskills contributors"
+  },
+  "plugins": [
+    {
+      "name": "leinoskills",
+      "source": "./",
+      "description": "Engineering workflows with an optional Codex desktop Pro advisor."
+    }
+  ]
+}

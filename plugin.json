@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "leinoskills",
+  "version": "0.2.0",
+  "description": "Engineering workflows for Vue/Nuxt, SCSS, Go, project structure, project memory, and scenario review. Includes an optional Codex desktop Pro advisor.",
+  "author": {
+    "name": "leinoskills contributors"
+  },
+  "homepage": "https://github.com/L1TTL3H0rSE/leinoskills",
+  "repository": "https://github.com/L1TTL3H0rSE/leinoskills"
+}

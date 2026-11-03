@@ -1,5 +1,28 @@
 # Claude Code
 
+## Plugin
+
+```sh
+claude plugin marketplace add L1TTL3H0rSE/leinoskills
+claude plugin install leinoskills@leinoskills
+claude plugin details leinoskills
+```
+
+Restart Claude Code. Plugin skills use namespaced commands such as `/leinoskills:vue-nuxt-workflow` and `/leinoskills:scenario-review`; Claude can also select them from descriptions. All seven packages are included, but **chatgpt-pro-advisor requires Codex desktop and cannot run in Claude Code**.
+
+The manifests in `.claude-plugin/` point to the same `skills/` directory used by standalone installation. See the [Claude Code plugin documentation](https://code.claude.com/docs/en/plugins-reference).
+
+To update:
+
+```sh
+claude plugin marketplace update leinoskills
+claude plugin update leinoskills@leinoskills
+```
+
+Restart Claude Code after updating. Plugin files are cached by the host; editing a separate checkout does not update that cache. Avoid enabling standalone copies alongside the plugin. Move old copies outside discovery and preserve local customizations before migrating.
+
+## Standalone skills
+
 For installations discovering user Agent Skills at `~/.claude/skills/<name>/SKILL.md`, link the packages there. Engineering skills need no Claude-specific fields or commands. Consult the [Claude Code skill documentation](https://code.claude.com/docs/en/skills) for current discovery behavior. The optional ChatGPT Pro advisor instead requires Codex desktop's native tools.
 
 From this checkout's root, in PowerShell or a shell with HOME set:
