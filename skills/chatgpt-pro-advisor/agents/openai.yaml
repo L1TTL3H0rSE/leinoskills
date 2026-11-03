@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChatGPT Pro advisor"
+  short_description: "Get a ChatGPT Pro second opinion in a Codex task"
+  default_prompt: "Use $chatgpt-pro-advisor to share relevant task context with Pro, obtain an independent assessment, and verify its findings locally."
